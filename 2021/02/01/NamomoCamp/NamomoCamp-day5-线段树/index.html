@@ -18,13 +18,13 @@
   <meta name="description" content="Solution for NamomoCamp2021-div2-day5-线段树">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NamomoCamp-day5-线段树">
-<meta property="og:url" content="http://example.com/2021/02/01/NamomoCamp-day5-%E7%BA%BF%E6%AE%B5%E6%A0%91/index.html">
+<meta property="og:url" content="http://example.com/2021/02/01/NamomoCamp/NamomoCamp-day5-%E7%BA%BF%E6%AE%B5%E6%A0%91/index.html">
 <meta property="og:site_name" content="Awei&#39;s Blog">
 <meta property="og:description" content="Solution for NamomoCamp2021-div2-day5-线段树">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/null">
 <meta property="article:published_time" content="2021-01-31T23:28:16.000Z">
-<meta property="article:modified_time" content="2021-01-31T23:35:54.901Z">
+<meta property="article:modified_time" content="2021-02-04T21:16:45.905Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/null">
@@ -137,7 +137,7 @@
                 <div class="kratos-post-meta text-center">
                     <span>
                         <i class="fa fa-calendar"></i> 2021-02-01
-                        <i class="fa fa-folder"></i> 分类 <a class="label-link" href="/categories/NamomoCamp/">NamomoCamp</a>, <a class="label-link" href="/categories/NamomoCamp/day5-%E7%BA%BF%E6%AE%B5%E6%A0%91/">day5-线段树</a>
+                        <i class="fa fa-folder"></i> 分类 <a class="label-link" href="/categories/NamomoCamp/">NamomoCamp</a>
                         <i class="fa fa-user"></i> 作者 John Doe
                         <i class="fa fa-edit"></i> 
                         
@@ -151,13 +151,12 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1612136154901"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1612473405905"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                 <hr />
                 <p>Solution for NamomoCamp2021-div2-day5-线段树</p>
 <a id="more"></a>
-
 <h1 id="Subsequence-Count-hdu-6155"><a href="#Subsequence-Count-hdu-6155" class="headerlink" title="Subsequence Count (hdu 6155)"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=6155">Subsequence Count (hdu 6155)</a></h1><div class="xControl">
     <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>Tag</span></div>
     <div class="xContent"><div class="inner">
@@ -165,14 +164,12 @@
  
     </div></div>
     </div>
-
 <div class="xControl">
     <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>Solution</span></div>
     <div class="xContent"><div class="inner">
         <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">f[i][0] 考虑前 i 位，以 0 结尾的本质不同子序列个数</span><br><span class="line">f[i][1] 考虑前 i 位，以 1 结尾的本质不同子序列个数</span><br><span class="line">s[i]&#x3D;&#x3D;0 -&gt; f[i][0]&#x3D;f[i-1][0]+f[i-1][1]+1;</span><br><span class="line">           f[i][1]&#x3D;f[i-1][1];</span><br><span class="line">s[i]&#x3D;&#x3D;1 -&gt; f[i][1]&#x3D;f[i-1][0]+f[i-1][1]+1;</span><br><span class="line">           f[i][0]&#x3D;f[i-1][0];</span><br><span class="line">转化为矩阵乘法</span><br><span class="line">  mat   -&gt; [f[i][0] f[i][1] 1]</span><br><span class="line">  初值   -&gt; [0 0 1]</span><br><span class="line">  </span><br><span class="line">s[i]&#x3D;&#x3D;0 -&gt; [1 0 0]</span><br><span class="line">           [1 1 0]</span><br><span class="line">           [1 0 1]</span><br><span class="line"></span><br><span class="line">s[i]&#x3D;&#x3D;1 -&gt; [1 1 0]</span><br><span class="line">           [0 1 0]</span><br><span class="line">           [0 1 1]</span><br><span class="line">info &#x3D; 转移矩阵乘积</span><br><span class="line">tag &#x3D; flip, flip 区间 &#x3D; 每个单点的矩阵 swap 1,2行和1,2列 &#x3D; 矩阵乘积swap 1,2行和1,2列 (横竖编号均变化 [1,2,3]-&gt;[2,1,3] )</span><br><span class="line">info合并: 矩阵乘</span><br><span class="line">tag合并: 异或</span><br><span class="line">tag更新info: 矩阵交换</span><br><span class="line">query得出矩阵乘mul, [0 0 1] * mul &#x3D; [f[0] f[1] 1]</span><br><span class="line">ans &#x3D; f[0] + f[1]</span><br></pre></td></tr></table></figure> 
     </div></div>
     </div>
-
 <div class="xControl">
     <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>Code</span></div>
     <div class="xContent"><div class="inner">
@@ -231,7 +228,7 @@
     <script type="text/javascript">
         $(()=>{
             new QRCode("wechat-qr", {
-                text: "http://example.com/2021/02/01/NamomoCamp-day5-%E7%BA%BF%E6%AE%B5%E6%A0%91/",
+                text: "http://example.com/2021/02/01/NamomoCamp/NamomoCamp-day5-%E7%BA%BF%E6%AE%B5%E6%A0%91/",
                 width: 150,
                 height: 150,
                 correctLevel : QRCode.CorrectLevel.H
@@ -243,7 +240,7 @@
             const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
             const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
             const twitterBase   = "https://twitter.com/intent/tweet?";
-            const hostUrl       = "http://example.com/2021/02/01/NamomoCamp-day5-%E7%BA%BF%E6%AE%B5%E6%A0%91/";
+            const hostUrl       = "http://example.com/2021/02/01/NamomoCamp/NamomoCamp-day5-%E7%BA%BF%E6%AE%B5%E6%A0%91/";
             const title         = "「NamomoCamp-day5-线段树」";
             const excerpt       = `Solution for NamomoCamp2021-div2-day5-线段树`;
             let _URL;
@@ -267,7 +264,7 @@
                         
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2021-02-01</span>
+                    <span>最后编辑：2021-02-05</span>
                     </div>
                 </div>
             </footer>
@@ -276,9 +273,13 @@
             <nav class="navigation post-navigation clearfix" role="navigation">
                 
                 <div class="nav-previous clearfix">
-                    <a title=" NamomoCamp-day1-dp" href="/2021/02/01/NamomoCamp-day1-dp/">&lt; 上一篇</a>
+                    <a title=" NamomoCamp-day1-dp" href="/2021/02/01/NamomoCamp/NamomoCamp-day1-dp/">&lt; 上一篇</a>
                 </div>
                 
+                
+                <div class="nav-next clearfix">
+                    <a title=" 关于浮点损失与精度问题" href="/2021/02/07/杂记/关于浮点损失与精度问题/">下一篇 &gt;</a>
+                </div>
                 
             </nav>
         
@@ -309,19 +310,12 @@
                     
   <aside id="krw-categories" class="widget widget-categories clearfix">
     <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/NamomoCamp/">NamomoCamp</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/NamomoCamp/day1-dp/">day1-dp</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/NamomoCamp/day5-%E7%BA%BF%E6%AE%B5%E6%A0%91/">day5-线段树</a><span class="category-list-count">1</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/NamomoCamp/">NamomoCamp</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%AE%B0/">杂记</a><span class="category-list-count">1</span></li></ul>
   </aside>
 
 
                 
                     
-  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
-    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
-      <div class="tag-clouds">
-        <a href="/tags/%E5%A1%AB%E5%9D%91dp/" style="font-size: 0.6em;">填坑dp</a> <a href="/tags/%E6%95%B0%E4%BD%8Ddp/" style="font-size: 0.6em;">数位dp</a> <a href="/tags/%E8%BD%AE%E5%BB%93%E7%BA%BFdp/" style="font-size: 0.6em;">轮廓线dp</a>
-      </div>
-  </aside>
-
                 
                     
   <aside id="krw-posts" class="widget widget-kratos-poststab">
@@ -332,13 +326,19 @@
         
           
           
-            <a class="list-group-item" href="/2021/02/01/NamomoCamp-day5-%E7%BA%BF%E6%AE%B5%E6%A0%91/"><i class="fa  fa-book"></i> NamomoCamp-day5-线段树</a>
+            <a class="list-group-item" href="/2021/02/07/%E6%9D%82%E8%AE%B0/%E5%85%B3%E4%BA%8E%E6%B5%AE%E7%82%B9%E6%8D%9F%E5%A4%B1%E4%B8%8E%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/"><i class="fa  fa-book"></i> 关于浮点损失与精度问题</a>
             
           
         
           
           
-            <a class="list-group-item" href="/2021/02/01/NamomoCamp-day1-dp/"><i class="fa  fa-book"></i> NamomoCamp-day1-dp</a>
+            <a class="list-group-item" href="/2021/02/01/NamomoCamp/NamomoCamp-day5-%E7%BA%BF%E6%AE%B5%E6%A0%91/"><i class="fa  fa-book"></i> NamomoCamp-day5-线段树</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/02/01/NamomoCamp/NamomoCamp-day1-dp/"><i class="fa  fa-book"></i> NamomoCamp-day1-dp</a>
             
           
         
