@@ -24,7 +24,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/null">
 <meta property="article:published_time" content="2021-02-06T16:36:31.000Z">
-<meta property="article:modified_time" content="2021-02-06T16:56:05.955Z">
+<meta property="article:modified_time" content="2021-02-06T17:10:37.780Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/null">
@@ -142,7 +142,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            409
+                            410
                         
                         字
                         
@@ -151,11 +151,12 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1612630565955"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1612631437780"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                 <hr />
-                <h1 id="ABC-191-D"><a href="#ABC-191-D" class="headerlink" title="ABC#191 D"></a><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc191/tasks/abc191_d">ABC#191 D</a></h1><p>真是被坑惨了。。。</p>
+                <a id="more"></a>
+<h1 id="ABC-191-D"><a href="#ABC-191-D" class="headerlink" title="ABC#191 D"></a><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc191/tasks/abc191_d">ABC#191 D</a></h1><p>真是被坑惨了。。。</p>
 <p>卡精度原因是浮点数其实是二进制表示的，然而总有无法完美表示的浮点数。<del>其实$IEEE754$怎么算的我已经忘了</del></p>
 <p>比如下面这个例子</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> x;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>, &amp;x);</span><br><span class="line">ll d = x * <span class="number">10000</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, d);</span><br></pre></td></tr></table></figure>
@@ -237,10 +238,11 @@
             const twitterBase   = "https://twitter.com/intent/tweet?";
             const hostUrl       = "http://example.com/2021/02/07/%E6%9D%82%E8%AE%B0/%E5%85%B3%E4%BA%8E%E6%B5%AE%E7%82%B9%E6%8D%9F%E5%A4%B1%E4%B8%8E%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/";
             const title         = "「关于浮点损失与精度问题」";
-            const excerpt       = `ABC#191 D真是被坑惨了。。。
+            const excerpt       = `
+ABC#191 D真是被坑惨了。。。
 卡精度原因是浮点数其实是二进制表示的，然而总有无法完美表示的浮点数。其实$IEEE754$怎么算的我已经忘了
 比如下面这个例子
-1234double x;scanf(&quot;%lf&quot;...`;
+1234double x;scanf(&quot;%lf&quot...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
