@@ -166,7 +166,7 @@
 
 <script type="text/javascript">
 {
-    const flist = JSON.parse(`[{"name":"Kwords","bio":"先辈！好きッス！","avatar":"../images/Kwords.JPG","link":"https://kwords.github.io"},{"name":"Hile_Meow","bio":"南桐+Q 2171182524","avatar":"../images/Hile_Meow.JPG","link":"https:/hileqaq.github.io"},{"name":"刘征宇","bio":"美少女","avatar":"../images/liuzy.JPG","link":"https://drown.party"},{"name":"Boboge","bio":"南桐+V Hile_Meow","avatar":"../images/Boboge.JPG","link":"https://avgstuboboge.github.io"}]`);
+    const flist = JSON.parse(`[{"name":"Kwords","bio":"先辈！好きッス！","avatar":"../images/Kwords.JPG","link":"https://kwords.github.io"},{"name":"Hile_Meow","bio":"南桐+Q 2171182524","avatar":"../images/Hile_Meow.JPG","link":"https://hileqaq.github.io"},{"name":"刘老师","bio":"美少女","avatar":"../images/liuzy.JPG","link":"https://drown.party"},{"name":"Boboge","bio":"南桐+V Hile_Meow","avatar":"../images/Boboge.JPG","link":"https://avgstuboboge.github.io"}]`);
     let friendNodes = '';
     while (flist.length > 0) {
         const rndNum = Math.floor(Math.random()*flist.length);
@@ -389,22 +389,5 @@
 <!-- Extra support for third-party plguins  -->
 
 
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-</body>
+    </body>
 </html>
