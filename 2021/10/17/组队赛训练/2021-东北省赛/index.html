@@ -4,7 +4,7 @@
   <!-- 元数据 -->
   <meta charset="utf-8">
   <link rel="icon" href="">
-  <title>2020 东北省赛 | ZAwei's Blog</title>
+  <title>2021 东北省赛 | ZAwei's Blog</title>
   <meta name="author" content="ZAwei" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -15,16 +15,16 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="To be continued">
+  <meta name="description" content="还没开始写">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2020 东北省赛">
-<meta property="og:url" content="http://example.com/2021/10/16/2020-%E4%B8%9C%E5%8C%97%E7%9C%81%E8%B5%9B/index.html">
+<meta property="og:title" content="2021 东北省赛">
+<meta property="og:url" content="http://example.com/2021/10/17/%E7%BB%84%E9%98%9F%E8%B5%9B%E8%AE%AD%E7%BB%83/2021-%E4%B8%9C%E5%8C%97%E7%9C%81%E8%B5%9B/index.html">
 <meta property="og:site_name" content="ZAwei&#39;s Blog">
-<meta property="og:description" content="To be continued">
+<meta property="og:description" content="还没开始写">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/null">
-<meta property="article:published_time" content="2021-10-15T20:10:12.000Z">
-<meta property="article:modified_time" content="2021-10-16T17:43:14.482Z">
+<meta property="article:published_time" content="2021-10-16T17:30:05.000Z">
+<meta property="article:modified_time" content="2021-10-16T17:31:35.814Z">
 <meta property="article:author" content="ZAwei">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/null">
@@ -162,17 +162,17 @@
     <div class="kratos-hentry kratos-post-inner clearfix">
         <header class="kratos-entry-header">
             
-                <h1 class="kratos-entry-title text-center">2020 东北省赛</h1>
+                <h1 class="kratos-entry-title text-center">2021 东北省赛</h1>
             
             
             <ul class="kratos-post-meta text-center">
-                <li><i class="fa fa-calendar"></i> 2021-10-16</li>
+                <li><i class="fa fa-calendar"></i> 2021-10-17</li>
                 <li><i class="fa fa-user"></i> 作者 ZAwei</li>
                 <li>
                     <i class="fa fa-edit"></i> 
                     
                     
-                        ~2.59K
+                        7
                     
                     字
                 </li>
@@ -181,118 +181,12 @@
         </header>
         <div class="kratos-post-content">
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                本文最后编辑于 <time datetime="1634406194482"></time> 前，其中的内容可能需要更新。
+                本文最后编辑于 <time datetime="1634405495814"></time> 前，其中的内容可能需要更新。
             </div>
             
             <hr />
-            <p>To be continued</p>
+            <p>还没开始写</p>
 <span id="more"></span>
-<h1 id="A-Micro-Structure-Thread"><a href="#A-Micro-Structure-Thread" class="headerlink" title="A Micro Structure Thread"></a>A Micro Structure Thread</h1><p>// 未补</p>
-<h1 id="B-Team"><a href="#B-Team" class="headerlink" title="B Team"></a>B Team</h1><div class="xControl">
-    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>题意</span></div>
-    <div class="xContent"><div class="inner">
-        <p>A，B，C组各$n$个人，一个队伍要选$3$个学生$a,b,c$（每组一个），每个人有一个点权$v_i$，一个队伍的权值为 $f(a, b)+f(a, c)$。一共要选$m$队，问权值和最大为多少。数据范围 $m\leq n\leq 200, T\leq 10$</p>
-<script type="math/tex; mode=display">
-f(i, j) = (v_i+v_j)*(v_i\oplus v_j) \% MOD</script> 
-    </div></div>
-    </div>
-<div class="xControl">
-    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>Solution</span></div>
-    <div class="xContent"><div class="inner">
-        <p>转化为最小费用最大流模型，用最大流对应最多选m队的条件，将边权置为负值，即可将求最大权值转化为最小权值。</p>
-<p>建边方法如下：</p>
-<ul>
-<li>将源点$S$拆成两个点$S$和$S’$，建边$S\rightarrow S’$，容量$m$，费用0</li>
-<li>对每个$b_i$建边$S’\rightarrow b_i$，容量1，费用0</li>
-<li>对每个$(b_i, a_j)$，建边$b_i\rightarrow a_j$，容量1，费用$f(b_i,a_j)$</li>
-<li>将每个$a_i$拆成两个点$a_i$和$a_i’$，建边$a_i\rightarrow a_i’$，容量1，费用0，这一步是为了避免一个$a_i$被多个队伍复用</li>
-<li>对每个$(a_i’,c_j)$，建边$a_i’\rightarrow c_j$，容量1，费用$f(a_i’,c_j)$</li>
-</ul>
-<p>关于负边：</p>
-<ul>
-<li>注意Dijkstra无法处理负边，应使用SPFA的费用流</li>
-<li>本题中，答案边数是固定的，因此也可以将所有负边加上一个固定值变为正权边，然后用Dijkstra费用流</li>
-</ul>
- 
-    </div></div>
-    </div>
-<h1 id="C-Function"><a href="#C-Function" class="headerlink" title="C Function"></a>C Function</h1><div class="xControl">
-    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>题意</span></div>
-    <div class="xContent"><div class="inner">
-        <p>用$f(x)$表示$x$的所有后缀类乘后对$x+1$取模的结果，如$f(1023)=(3<em>23</em>23*1023)%1024$</p>
-<p>用$g(n,m)$表示对$n$做$m$次$n=f(n)$</p>
-<p>求$\sum\limits_{i=1}^m g(n, i)$，数据范围 $1\leq n,m\leq 10^9,T\leq 20$</p>
- 
-    </div></div>
-    </div>
-<div class="xControl">
-    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>Solution</span></div>
-    <div class="xContent"><div class="inner">
-        <p>瞎几把手玩了几组数据，感觉 $n$ 实际做不了几次$n=f(n)$ 就会死循环 $n=f(n)$，跟榜直接冲了发暴力就过了</p>
-<p>但是这个收敛的次数实在不会证</p>
- 
-    </div></div>
-    </div>
-<h1 id="D-Fall-Guys"><a href="#D-Fall-Guys" class="headerlink" title="D Fall Guys"></a>D Fall Guys</h1><p>// TODO</p>
-<h1 id="E-Liner-vectors"><a href="#E-Liner-vectors" class="headerlink" title="E Liner vectors"></a>E Liner vectors</h1><p>// TODO</p>
-<h1 id="F-Splendor"><a href="#F-Splendor" class="headerlink" title="F Splendor"></a>F Splendor</h1><p>// 未补</p>
-<h1 id="G-Halli-Galli"><a href="#G-Halli-Galli" class="headerlink" title="G Halli Galli"></a>G Halli Galli</h1><p>// TODO</p>
-<h1 id="H-PepperLa’s-String"><a href="#H-PepperLa’s-String" class="headerlink" title="H PepperLa’s String"></a>H PepperLa’s String</h1><p>//  TODO</p>
-<h1 id="I-PepperLa’s-Cram-School"><a href="#I-PepperLa’s-Cram-School" class="headerlink" title="I PepperLa’s Cram School"></a>I PepperLa’s Cram School</h1><div class="xControl">
-    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>题意</span></div>
-    <div class="xContent"><div class="inner">
-        <p>给一张 $N\times N$ 的完全图，每条边权值相等，再给一个 $N\times N$ 的矩阵 $a$，要求选取几条边，将其余边都删除后，使得对所有 $(i,j)$ ，最短路 $dis<em>{ij}=a</em>{ij}$，问最少选几条边，保证给出的矩阵 $a$ 合法。（即一定存在选边方案）</p>
-<p>多组数据，数据范围 $N\leq 10^3, \sum N\leq 5\times 10^3$</p>
- 
-    </div></div>
-    </div>
-<div class="xControl">
-    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>Solution</span></div>
-    <div class="xContent"><div class="inner">
-        <p>由于所有边等长，矩阵 $a$ 又一定合法，因此对于 $a<em>{ij}=min(a</em>{ij})$ 的 $(i,j)$，一定有直连边，选择这些边即可</p>
-<p>坑点是题目只说所有边等长，但没有说边权是多少，一开始默认边权为1，wa了不少发</p>
- 
-    </div></div>
-    </div>
-<h1 id="J-Color-the-blocks"><a href="#J-Color-the-blocks" class="headerlink" title="J Color the blocks"></a>J Color the blocks</h1><p>签到，懒得写了，略</p>
-<h1 id="K-PeperLa’s-Boast"><a href="#K-PeperLa’s-Boast" class="headerlink" title="K PeperLa’s Boast"></a>K PeperLa’s Boast</h1><div class="xControl">
-    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>题意</span></div>
-    <div class="xContent"><div class="inner">
-        <p>给一张 $N\times M$ 的格点图，每次移动可以从 $(i,j)$ 移动到 $(i+1,j),(i,j+1),(i+1,j+1)$，要求从$(1,1)$出发走到$(n,m)$，每个点有权值 $a<em>{ij}$，走到$(i,j)$可以获取$a</em>{ij}$的能量，若$a_{ij}\leq 0$，表示本格子有毒，需要屏气通过，可以一次性花费 $U$ 的能量开启屏气状态，屏气状态持续$K$步，可以主动取消。</p>
-<p>这里题意有点歧义，实际上屏气状态需要在进入毒气区前开启，并在离开毒气区后解除，即如果$K=1$，是无法通过任何毒气区的。</p>
-<p>求走到$(n,m)$时，身上最多有多少能量</p>
-<p>多组数据，数据范围 $N,M\le 10^3, 1\le K,U\le 10^9,\sum {N\times M}\le 7\times 10^6$</p>
- 
-    </div></div>
-    </div>
-<div class="xControl">
-    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>Solution</span></div>
-    <div class="xContent"><div class="inner">
-        <p>考虑DP，$f_{i,j}$ 表示走到 $(i,j)$ 时最多有多少能量，两种转移：</p>
-<ul>
-<li>不考虑屏气，则有如下转移式</li>
-</ul>
-<script type="math/tex; mode=display">
-f_{i,j}=
-\begin{cases}
-f_{i,j-1} + a_{i,j}& a_{i,j-1}>0 \\
-f_{i-1,j} + a_{i,j}& a_{i-1,j}>0 \\
-f_{i-1,j-1} + a_{i,j}& a_{i-1,j-1}>0 \\
-\end{cases}</script><ul>
-<li>考虑屏气，则有如下转移式</li>
-</ul>
-<script type="math/tex; mode=display">
-f_{i,j}=max(f_{x,y})-U+a_{i,j} \ \  (i-k\le x\le i,j-k\le y\le j)</script><p>第一种转移比较简单，主要讲第二种转移。</p>
-<p>该转移相当于从 $(i,j)$ 的左上角矩阵中取一个最大值，由于转移是从左到右，从上到下进行的，可以对每一列维护一个单调队列，这样就可以在dp到第$i$行时，对每个 $j$ 维护 $max(f_{x,j})(i-k\le x\le i)$。</p>
-<p>然后从这一行上的每个单调队列中取出最大值，再做一遍单调队列，就可以得到这个矩阵中的最大值了。</p>
-<p>相当于先对每列求最大值，再从中求矩阵的最大值。</p>
-<p>复杂度$O(N*M)$</p>
- 
-    </div></div>
-    </div>
-<h1 id="L-PeperLa’s-Express"><a href="#L-PeperLa’s-Express" class="headerlink" title="L PeperLa’s Express"></a>L PeperLa’s Express</h1><p>不想写了啊啊啊啊啊</p>
-<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/424959503/answer/1518770866">出题人题解</a></p>
-<p><a target="_blank" rel="noopener" href="https://hileqaq.github.io/2021/10/15/2020CCPC%E4%B8%9C%E5%8C%97%E5%9B%9B%E7%9C%81%E8%B5%9B/">Hile_Meow题解</a></p>
 
         </div>
         
@@ -346,7 +240,7 @@ f_{i,j}=max(f_{x,y})-U+a_{i,j} \ \  (i-k\le x\le i,j-k\le y\le j)</script><p>第
     <script type="text/javascript">
         $(()=>{
             new QRCode("wechat-qr", {
-                text: "http://example.com/2021/10/16/2020-%E4%B8%9C%E5%8C%97%E7%9C%81%E8%B5%9B/",
+                text: "http://example.com/2021/10/17/%E7%BB%84%E9%98%9F%E8%B5%9B%E8%AE%AD%E7%BB%83/2021-%E4%B8%9C%E5%8C%97%E7%9C%81%E8%B5%9B/",
                 width: 150,
                 height: 150,
                 correctLevel : QRCode.CorrectLevel.H
@@ -358,9 +252,9 @@ f_{i,j}=max(f_{x,y})-U+a_{i,j} \ \  (i-k\le x\le i,j-k\le y\le j)</script><p>第
             const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
             const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
             const twitterBase   = "https://twitter.com/intent/tweet?";
-            const hostUrl       = "http://example.com/2021/10/16/2020-%E4%B8%9C%E5%8C%97%E7%9C%81%E8%B5%9B/";
-            const title         = "「2020 东北省赛」";
-            const excerpt       = `To be continued`;
+            const hostUrl       = "http://example.com/2021/10/17/%E7%BB%84%E9%98%9F%E8%B5%9B%E8%AE%AD%E7%BB%83/2021-%E4%B8%9C%E5%8C%97%E7%9C%81%E8%B5%9B/";
+            const title         = "「2021 东北省赛」";
+            const excerpt       = `还没开始写`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -391,13 +285,9 @@ f_{i,j}=max(f_{x,y})-U+a_{i,j} \ \  (i-k\le x\le i,j-k\le y\le j)</script><p>第
         <nav class="navigation post-navigation clearfix" role="navigation">
             
             <div class="nav-previous clearfix">
-                <a title=" Final Fantasy 队伍训练记录" href="/2021/10/16/Final-Fantasy-队伍训练记录/">&lt; 上一篇</a>
+                <a title=" 2020 东北省赛" href="/2021/10/16/组队赛训练/2020-东北省赛/">&lt; 上一篇</a>
             </div>
             
-            
-            <div class="nav-next clearfix">
-                <a title=" 2021 东北省赛" href="/2021/10/17/2021-东北省赛/">下一篇 &gt;</a>
-            </div>
             
         </nav>
     
@@ -457,19 +347,19 @@ f_{i,j}=max(f_{x,y})-U+a_{i,j} \ \  (i-k\le x\le i,j-k\le y\le j)</script><p>第
         
           
           
-            <a class="list-group-item" href="/2021/10/17/2021-%E4%B8%9C%E5%8C%97%E7%9C%81%E8%B5%9B/"><i class="fa  fa-book"></i> 2021 东北省赛</a>
+            <a class="list-group-item" href="/2021/10/17/%E7%BB%84%E9%98%9F%E8%B5%9B%E8%AE%AD%E7%BB%83/2021-%E4%B8%9C%E5%8C%97%E7%9C%81%E8%B5%9B/"><i class="fa  fa-book"></i> 2021 东北省赛</a>
             
           
         
           
           
-            <a class="list-group-item" href="/2021/10/16/2020-%E4%B8%9C%E5%8C%97%E7%9C%81%E8%B5%9B/"><i class="fa  fa-book"></i> 2020 东北省赛</a>
+            <a class="list-group-item" href="/2021/10/16/%E7%BB%84%E9%98%9F%E8%B5%9B%E8%AE%AD%E7%BB%83/2020-%E4%B8%9C%E5%8C%97%E7%9C%81%E8%B5%9B/"><i class="fa  fa-book"></i> 2020 东北省赛</a>
             
           
         
           
           
-            <a class="list-group-item" href="/2021/10/16/Final-Fantasy-%E9%98%9F%E4%BC%8D%E8%AE%AD%E7%BB%83%E8%AE%B0%E5%BD%95/"><i class="fa  fa-book"></i> Final Fantasy 队伍训练记录</a>
+            <a class="list-group-item" href="/2021/10/16/%E7%BB%84%E9%98%9F%E8%B5%9B%E8%AE%AD%E7%BB%83/Final-Fantasy-%E9%98%9F%E4%BC%8D%E8%AE%AD%E7%BB%83%E8%AE%B0%E5%BD%95/"><i class="fa  fa-book"></i> Final Fantasy 队伍训练记录</a>
             
           
         
@@ -610,22 +500,5 @@ f_{i,j}=max(f_{x,y})-U+a_{i,j} \ \  (i-k\le x\le i,j-k\le y\le j)</script><p>第
 <!-- Extra support for third-party plguins  -->
 
 
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-</body>
+    </body>
 </html>
