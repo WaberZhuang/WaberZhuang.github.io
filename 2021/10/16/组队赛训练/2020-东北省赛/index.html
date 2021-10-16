@@ -24,7 +24,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/null">
 <meta property="article:published_time" content="2021-10-15T20:10:12.000Z">
-<meta property="article:modified_time" content="2021-10-16T17:51:15.275Z">
+<meta property="article:modified_time" content="2021-10-16T18:02:45.002Z">
 <meta property="article:author" content="ZAwei">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/null">
@@ -172,7 +172,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        ~2.60K
+                        ~2.63K
                     
                     字
                 </li>
@@ -181,7 +181,7 @@
         </header>
         <div class="kratos-post-content">
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                本文最后编辑于 <time datetime="1634406675275"></time> 前，其中的内容可能需要更新。
+                本文最后编辑于 <time datetime="1634407365002"></time> 前，其中的内容可能需要更新。
             </div>
             
             <hr />
@@ -219,7 +219,7 @@ f(i, j) = (v_i+v_j)*(v_i\oplus v_j) \% MOD</script>
 <h1 id="C-Function"><a href="#C-Function" class="headerlink" title="C Function"></a>C Function</h1><div class="xControl">
     <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>题意</span></div>
     <div class="xContent"><div class="inner">
-        <p>用$f(x)$表示$x$的所有后缀类乘后对$x+1$取模的结果，如$f(1023)=(3<em>23</em>23*1023)%1024$</p>
+        <p>用$f(x)$表示$x$的所有后缀类乘后对$x+1$取模的结果，如$f(1023)=(3\times 23\times 23\times 1023)\%1024$</p>
 <p>用$g(n,m)$表示对$n$做$m$次$n=f(n)$</p>
 <p>求$\sum\limits_{i=1}^m g(n, i)$，数据范围 $1\leq n,m\leq 10^9,T\leq 20$</p>
  
@@ -241,7 +241,7 @@ f(i, j) = (v_i+v_j)*(v_i\oplus v_j) \% MOD</script>
 <h1 id="I-PepperLa’s-Cram-School"><a href="#I-PepperLa’s-Cram-School" class="headerlink" title="I PepperLa’s Cram School"></a>I PepperLa’s Cram School</h1><div class="xControl">
     <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>题意</span></div>
     <div class="xContent"><div class="inner">
-        <p>给一张 $N\times N$ 的完全图，每条边权值相等，再给一个 $N\times N$ 的矩阵 $a$，要求选取几条边，将其余边都删除后，使得对所有 $(i,j)$ ，最短路 $dis<em>{i,j}= a</em>{i,j}$，问最少选几条边，保证给出的矩阵 $a$ 合法。（即一定存在选边方案）</p>
+        <p>给一张 $N\times N$ 的完全图，每条边权值相等，再给一个 $N\times N$ 的矩阵 $a$，要求选取几条边，将其余边都删除后，使得对所有 $(i,j)$ ，最短路 $dis_{i,j}=a_{i,j}$ ，问最少选几条边，保证给出的矩阵 $a$ 合法。（即一定存在选边方案）</p>
 <p>多组数据，数据范围 $N\leq 10^3, \sum N\leq 5\times 10^3$</p>
  
     </div></div>
@@ -249,7 +249,7 @@ f(i, j) = (v_i+v_j)*(v_i\oplus v_j) \% MOD</script>
 <div class="xControl">
     <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>Solution</span></div>
     <div class="xContent"><div class="inner">
-        <p>由于所有边等长，矩阵 $a$ 又一定合法，因此对于 $a<em>{i,j}=min(a</em>{i,j})$ 的 $(i,j)$，一定有直连边，选择这些边即可</p>
+        <p>由于所有边等长，矩阵 $a$ 又一定合法，因此对于 $a_{i,j}=min(a_{i,j})$ 的 $(i,j)$，一定有直连边，选择这些边即可</p>
 <p>坑点是题目只说所有边等长，但没有说边权是多少，一开始默认边权为1，w</p>
 <p>a了不少发</p>
  
@@ -259,7 +259,7 @@ f(i, j) = (v_i+v_j)*(v_i\oplus v_j) \% MOD</script>
 <h1 id="K-PeperLa’s-Boast"><a href="#K-PeperLa’s-Boast" class="headerlink" title="K PeperLa’s Boast"></a>K PeperLa’s Boast</h1><div class="xControl">
     <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>题意</span></div>
     <div class="xContent"><div class="inner">
-        <p>给一张 $N\times M$ 的格点图，每次移动可以从 $(i,j)$ 移动到 $(i+1,j),(i,j+1),(i+1,j+1)$，要求从$(1,1)$出发走到$(n,m)$，每个点有权值 $a<em>{i,j}$，走到$(i,j)$可以获取$a</em>{i,j}$的能量，若$a_{i,j}\leq 0$，表示本格子有毒，需要屏气通过，可以一次性花费 $U$ 的能量开启屏气状态，屏气状态持续$K$步，可以主动取消。</p>
+        <p>给一张 $N\times M$ 的格点图，每次移动可以从 $(i,j)$ 移动到 $(i+1,j),(i,j+1),(i+1,j+1)$，要求从$(1,1)$出发走到$(n,m)$，每个点有权值 $a_{i,j}$，走到$(i,j)$可以获取$a_{i,j}$的能量，若$a_{i,j}\leq 0$，表示本格子有毒，需要屏气通过，可以一次性花费 $U$ 的能量开启屏气状态，屏气状态持续$K$步，可以主动取消。</p>
 <p>这里题意有点歧义，实际上屏气状态需要在进入毒气区前开启，并在离开毒气区后解除，即如果$K=1$，是无法通过任何毒气区的。</p>
 <p>求走到$(n,m)$时，身上最多有多少能量</p>
 <p>多组数据，数据范围 $N,M\le 10^3, 1\le K,U\le 10^9,\sum {N\times M}\le 7\times 10^6$</p>
@@ -287,7 +287,7 @@ f_{i,j}=max(f_{x,y})-U+a_{i,j} \ \  (i-k\le x\le i,j-k\le y\le j)</script><p>第
 <p>该转移相当于从 $(i,j)$ 的左上角矩阵中取一个最大值，由于转移是从左到右，从上到下进行的，可以对每一列维护一个单调队列，这样就可以在dp到第$i$行时，对每个 $j$ 维护 $max(f_{x,j})(i-k\le x\le i)$。</p>
 <p>然后从这一行上的每个单调队列中取出最大值，再做一遍单调队列，就可以得到这个矩阵中的最大值了。</p>
 <p>相当于先对每列求最大值，再从中求矩阵的最大值。</p>
-<p>复杂度$O(N*M)$</p>
+<p>复杂度$O(N\times M)$</p>
  
     </div></div>
     </div>
@@ -611,22 +611,5 @@ f_{i,j}=max(f_{x,y})-U+a_{i,j} \ \  (i-k\le x\le i,j-k\le y\le j)</script><p>第
 <!-- Extra support for third-party plguins  -->
 
 
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-</body>
+    </body>
 </html>
