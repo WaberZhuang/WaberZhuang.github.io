@@ -4,7 +4,7 @@
   <!-- 元数据 -->
   <meta charset="utf-8">
   <link rel="icon" href="">
-  <title>如何令hexo支持latex渲染 | ZAwei's Blog</title>
+  <title>在hexo中使用latex渲染 | ZAwei's Blog</title>
   <meta name="author" content="ZAwei" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -17,14 +17,14 @@
   
   <meta name="description" content="感谢这位老哥整理的博客 简书)：解决多个下标导致渲染失败的问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何令hexo支持latex渲染">
+<meta property="og:title" content="在hexo中使用latex渲染">
 <meta property="og:url" content="http://example.com/2021/10/16/%E5%9C%A8hexo%E4%B8%AD%E4%BD%BF%E7%94%A8latex%E6%B8%B2%E6%9F%93/index.html">
 <meta property="og:site_name" content="ZAwei&#39;s Blog">
 <meta property="og:description" content="感谢这位老哥整理的博客 简书)：解决多个下标导致渲染失败的问题">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/null">
 <meta property="article:published_time" content="2021-10-15T18:32:47.000Z">
-<meta property="article:modified_time" content="2021-10-16T18:45:29.167Z">
+<meta property="article:modified_time" content="2021-10-16T18:47:45.495Z">
 <meta property="article:author" content="ZAwei">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/null">
@@ -162,7 +162,7 @@
     <div class="kratos-hentry kratos-post-inner clearfix">
         <header class="kratos-entry-header">
             
-                <h1 class="kratos-entry-title text-center">如何令hexo支持latex渲染</h1>
+                <h1 class="kratos-entry-title text-center">在hexo中使用latex渲染</h1>
             
             
             <ul class="kratos-post-meta text-center">
@@ -181,7 +181,7 @@
         </header>
         <div class="kratos-post-content">
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                本文最后编辑于 <time datetime="1634409929167"></time> 前，其中的内容可能需要更新。
+                本文最后编辑于 <time datetime="1634410065495"></time> 前，其中的内容可能需要更新。
             </div>
             
             <hr />
@@ -254,7 +254,7 @@
             const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
             const twitterBase   = "https://twitter.com/intent/tweet?";
             const hostUrl       = "http://example.com/2021/10/16/%E5%9C%A8hexo%E4%B8%AD%E4%BD%BF%E7%94%A8latex%E6%B8%B2%E6%9F%93/";
-            const title         = "「如何令hexo支持latex渲染」";
+            const title         = "「在hexo中使用latex渲染」";
             const excerpt       = `
 感谢这位老哥整理的博客
 简书)：解决多个下标导致渲染失败的问题
@@ -379,7 +379,7 @@
         
           
           
-            <a class="list-group-item" href="/2021/10/16/%E5%9C%A8hexo%E4%B8%AD%E4%BD%BF%E7%94%A8latex%E6%B8%B2%E6%9F%93/"><i class="fa  fa-book"></i> 如何令hexo支持latex渲染</a>
+            <a class="list-group-item" href="/2021/10/16/%E5%9C%A8hexo%E4%B8%AD%E4%BD%BF%E7%94%A8latex%E6%B8%B2%E6%9F%93/"><i class="fa  fa-book"></i> 在hexo中使用latex渲染</a>
             
           
         
@@ -503,22 +503,5 @@
 <!-- Extra support for third-party plguins  -->
 
 
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-</body>
+    </body>
 </html>
