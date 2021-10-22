@@ -172,7 +172,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        ~3.14K
+                        ~3.15K
                     
                     字
                 </li>
@@ -191,7 +191,7 @@
 <div class="xControl">
     <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>Solution</span></div>
     <div class="xContent"><div class="inner">
-        <p>分开考虑 ${1,2,…,n}$ 的贡献，对于数字 $k$ ，以 $k$ 为最小值的行有 $C_{n^2-k}^{n-1}$ 种。</p>
+        <p>分开考虑 $\{1,2,…,n\}$ 的贡献，对于数字 $k$ ，以 $k$ 为最小值的行有 $C_{n^2-k}^{n-1}$ 种。</p>
 <p>这一行可以是 $[1,n]$ 中任意一行，外加剩下的 $n^2-n$ 个数字可以随意排列，以及这一行内部可以随意排列，因此包含某个 $a_i=k$ 的布局方法有 $C_{n^2-k}^{n-1}\times C_n^1\times (n^2-n)!\times n!$ 种。</p>
  
     </div></div>
@@ -274,8 +274,8 @@ f_i=\prod\limits_{j}(f_j+h_j)</script>
 <h1 id="G-Ball"><a href="#G-Ball" class="headerlink" title="G Ball"></a>G Ball</h1><div class="xControl">
     <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>题意</span></div>
     <div class="xContent"><div class="inner">
-        <p>给定长度 $n$ 的斜坡，丢一个球在 $p$ 位置，如果 $p$ 位置为空，则该球将会留在 $p$ 位置。否则它会从 ${p-1,p-2,…,1}$ 找一个最近的空位置并留在该位置。如果 $[1,p]$ 全部不为空，则该球将会掉出斜坡。</p>
-<p>一共要丢 $m$ 个球，用 ${p_1,p_2,…,p_m}(1\le p_i\le n)$ 表示一种丢球方案，询问有多少种方案能刚好掉出去 $k$ 个球。</p>
+        <p>给定长度 $n$ 的斜坡，丢一个球在 $p$ 位置，如果 $p$ 位置为空，则该球将会留在 $p$ 位置。否则它会从 $\{p-1,p-2,…,1\}$ 找一个最近的空位置并留在该位置。如果 $[1,p]$ 全部不为空，则该球将会掉出斜坡。</p>
+<p>一共要丢 $m$ 个球，用 $\{p_1,p_2,…,p_m\}(1\le p_i\le n)$ 表示一种丢球方案，询问有多少种方案能刚好掉出去 $k$ 个球。</p>
 <p>数据范围 $T\le 1000, n\le 500, m\le 1000, 0\le k\le 500$</p>
  
     </div></div>
